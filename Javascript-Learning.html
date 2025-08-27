@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JavaScript Tutorial</title>
+  <title>JavaScript Notes</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
+  
+  
+  <h1>VARIABLES</h1>
+  <h4>What is a variable?</h4>
+
+  <p>A variable is a container for a value. (Variables are containers for storing values.)</p>
+
+  <h2>Declaring a Variable</h2>
+  <p>Creating a variable in JavaScript is called "declaring" a variable.</p>
+
+  <p>JavaScript variables can be declared in 4 ways:</p>
+
+  <p>
+    <li>Automatically</li>
+    <li>Using var</li>
+    <li>Using let</li>
+    <li>Using const</li>
+  </p>
+  
+  <h4>Automatically</h4>
+  <b>Example:</b> In this first example x, y, and z are undeclared variables. They are automatically declared when first used:
+
+  <pre>
+    <code>
+      x = 3;
+      y = 4;
+      z = x + y;
+    </code>
+  </pre>
+  
+
+  <p>From the examples you can guess:</p>
+
+  <li>x stores the value 3</li>
+  <li>y stores the value 4</li>
+  <li>z stores the value 7</li>
+
+  <h4>var</h4> 
+  <p>
+    The <code>var</code> keyword was used in all JavaScript code from 1995 to 2015.
+  </p>
+  <p>
+    The <code>let</code> and <code>const</code> keywords were added to JavaScript in 2015.
+  </p>
+
+  <p>
+    The var keyword should only be used in code written for older browsers.
+  </p>
+
+  <p>
+    <b>Function-scoped</b> (limited to the function where it is declared).
+  </p>
+  
+
+  
+
+  <p>Can be redeclared and updated.</p>
+
+  Hoisted -> JavaScript moves it to the top of its scope but initilizes it with <code>undefined</code>.
+
+  <h4>let</h4>
+  <p>Introduced in ES6 (2015).</p>
+
+  <b>Block-scoped</b> (limited to <code>{ }</code> where it's declared).
+
+  <p>Can be updated (re-assign) but not redeclared in the same scope.</p>
+
+  <pre>
+    <code>
+      let age = 29;
+      age = 30; //update allowed
+      console.log(age) //30
+    </code>
+  </pre>
+
+  <h4>const</h4>
+  <p>Also introduced in ES6.</p>
+  <p><b>Block-scoped</b> like <code>let</code>.</p>
+  <p>Must be initialized when declared.</p>
+  <p>Cannot be reassigned (constant).</p>
+  <p>Good for values that shouldn't change.</p>
+
+  
+  <pre>
+    <code>
+      const birthYear = 1991;
+      console.log(birthYear); //1991
+
+      //birthYear = 2001; X Error: Assignment to constant variable
+    </code>
+  </pre>
+  
+  <p>
+    <b>Note:</b> <code>const</code> does <b>not make objects immutable</b>. You can still change properties inside an object/array:
+  </p>
+
+  <pre>
+    <code>
+      const person = { name: "Nico" };
+      person.name = "Velti"; // allowed
+      console.log(person); // { name: "Velti" }
+    </code>
+  </pre>
+
+  <h2>Initializing a Variable</h2>
+  <p>Initializing a variable means assigning an initial value to a variable at the time it is declared or later, so it holds something instead of being <code>undefined</code>.</p>
+
+  <p>- Declaration without initialization - When you just declare a variable without assigning a value, it will automatically hold the value undefined:</p>
+  <pre>
+    <code>
+      let age; // declared but not initialized
+      console.log(age); // undefined
+    </code>
+  </pre>
+
+  <p>- Declaraiton with initialization - When you both declare and assign a value in one step:</p>
+  <pre>
+    <code>
+      let age = 27; // declared + initialized
+  console.log(age); // 27
+    </code>
+  </pre>
+
+  
+
+  <p>- Later initialization - You can also declare first, then initialize later:</p>
+  <pre>
+    <code>
+      let name;  // declaration
+      name = "John"; // initialization
+      console.log(name); // John
+    </code>
+  </pre>
+
+  
+  
+
+  <b>Initialization</b> is the process of giving a variable its first value.
+  
   
 </body>
 </html>
