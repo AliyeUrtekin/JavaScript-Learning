@@ -145,6 +145,148 @@
   
 
   <b>Initialization</b> is the process of giving a variable its first value.
+
+  <h1>What are Data Types?</h1>
+
+  <p>A data type tells JavaScript what kind of value a variable holds.<br>
+  For example: <code>"Burak"</code> is text(string), <code>27</code> is a number, <code>true</code> is a boolean.</p>
+ 
+  <p>JavaScript has two main categories of data types:</p>
+
+  <h3>1. Primitive Data Types (simple, immutable)</h3>
+  <p>Primitive means: stored directly in memory as a single value.<br>There are 7 primitive types:</p>
+
+  <b>1. Number</b>
+  <ul>
+    <li>Represents both integers and floating-point numbers.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let age = 27;
+        const pi = 3.14;
+      </code>
+  </pre>
+  <b>2. String</b>
+  <ul>
+    <li>Represents text, written inside quotes.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let name = "Micheal";
+        let city = "Yalova";
+      </code>
+  </pre>
+  <b>3. Boolean</b>
+  <ul>
+    <li>Represents logical values <code>true</code> or <code>false</code></li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let isStudent = true;
+        let hasCar = false;
+      </code>
+  </pre>
+  <b>4. Undefined</b>
+  <ul>
+    <li>A variable declared but not initialized.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let x;
+        console.log(x);  // undefined
+      </code>
+  </pre>
+  <b>5. Null</b>
+  <ul>
+    <li>Represents intentional empty value.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let y = null;
+      </code>
+  </pre>
+  <b>6. Symbol (ES6)</b>
+  <ul>
+    <li>Represents a unique identifier (often used in objects).</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let id = symbol("id");
+      </code>
+  </pre>
+  <b>7. BigInt (ES11 / 2020)</b>
+  <ul>
+    <li>For very large integers beyond <code>Number</code> limit.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+      <code>
+        let big = 123456789012345678901234567890n;
+      </code>
+  </pre>
+
+  <h3>Non-Primitive (Reference) Data Types (complex, mutable)</h3>
+  <p>These store references to memory, not the actual value.<br>Examples:</p>
+
+  <b>1. Object</b>
+  <ul>
+    <li>Collection of key-value pairs.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+    <code>
+      let person = { name: "Tom", age: 36 };
+    </code>
+  </pre>
+
+  <b>2. Array</b>
+  <ul>
+    <li>Ordered list of values.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+    <code>
+      let numbers = [1, 2, 3, 4, 5];
+    </code>
+  </pre>
+  <b>3. Function</b>
+  <ul>
+    <li>A bloc of reusable code.</li>
+    <li>Example:</li>
+  </ul>
+  <pre>
+    <code>
+      function greet() {
+        return "Hello!";
+      }
+    </code>
+  </pre>
+  <p>👉 All of these (object, array, function) are technically objects in JavaScript.</p>
+
+  <h4>Checking Data Types</h4>
+  You can use the <code>typeof</code> operator:
+
+  <pre>
+    <code>
+      console.log(typeof 42);        // "number"
+      console.log(typeof "Aliye");   // "string"
+      console.log(typeof true);      // "boolean"
+      console.log(typeof undefined); // "undefined"
+      console.log(typeof null);      // "object" (this is a well-known JS bug!)
+      console.log(typeof Symbol());  // "symbol"
+      console.log(typeof 123n);      // "bigint"
+      console.log(typeof [1,2,3]);   // "object"
+      console.log(typeof {a:1});     // "object"
+      console.log(typeof function(){}); // "function"
+    </code>
+  </pre>
+  
   
   
 </body>
