@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+  }
+</style>
 <body>
   
   
@@ -287,7 +294,391 @@
     </code>
   </pre>
   
+  <h1>JavaScript Operators</h1>
+  <p>Operators are special symbols that perform operations on values (variables or literals).<br>Example:</p>
+  <pre>
+    <code>
+      let x = 5 + 3;   // + is an operator
+      console.log(x);  // 8
+    </code>
+  </pre>
+
+  <h3>1. Arithmetic Operators (for numbers)</h3>
+  <p>Used for basic math.</p>
+  <table style="width:40%">
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+      <td><code>5 + 3</code></td>
+      <td><code>8</code></td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Subtraction</td>
+      <td><code>5 - 3</code></td>
+      <td><code>2</code></td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Multiplication</td>
+      <td><code>5 * 3</code></td>
+      <td><code>15</code></td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>Division</td>
+      <td><code>10 / 2</code></td>
+      <td><code>5</code></td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>Modulus (remainder)</td>
+      <td><code>10 % 3</code></td>
+      <td><code>1</code></td>
+    </tr>
+    <tr>
+      <td>**</td>
+      <td>Exponentiation (power)</td>
+      <td><code>2 ** 3</code></td>
+      <td><code>8</code></td>
+    </tr>
+    <tr>
+      <td>++</td>
+      <td>Increment</td>
+      <td><code>let a = 5; a++;</code></td>
+      <td><code>6</code></td>
+    </tr>
+    <tr>
+      <td>--</td>
+      <td>Decrement</td>
+      <td><code>let b = 5; b--;</code></td>
+      <td><code>4</code></td>
+    </tr>
+  </table>
+  <h3>2. Assignment Operators</h3>
+  <p>Used to assign values to variables.</p>
+  <table style="width:40%">
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Example</th>
+      <th>Same as</th>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td>Assign</td>
+      <td><code>x = 10</code></td>
+      <td><code>x = 10</code></td>
+    </tr>
+    <tr>
+      <td>+=</td>
+      <td>Add and assign</td>
+      <td><code>x += 5</code></td>
+      <td><code>x = x + 5</code></td>
+    </tr>
+    <tr>
+      <td>-=</td>
+      <td>Subtract and assign</td>
+      <td><code>x -= 3</code></td>
+      <td><code>x = x - 3</code></td>
+    </tr>
+    <tr>
+      <td>*=</td>
+      <td>Multiply and assign</td>
+      <td><code>x *= 2</code></td>
+      <td><code>x = x * 2</code></td>
+    </tr>
+    <tr>
+      <td>/=</td>
+      <td>Divide and assign</td>
+      <td><code>x /= 2</code></td>
+      <td><code>x = x / 2</code></td>
+    </tr>
+    <tr>
+      <td>%=</td>
+      <td>Modulas and assign</td>
+      <td><code>x %= 3</code></td>
+      <td><code>x = x % 3</code></td>
+    </tr>
+    <tr>
+      <td>**=</td>
+      <td>Exponent and assign</td>
+      <td><code>x **= 3</code></td>
+      <td><code>x = x ** 3 </code></td>
+    </tr>
+  </table>
+  <h3>3. Comparison Operators (return <code>true</code> or <code>false</code>)</h3>
+  <p>Used in conditions (like <code>if</code>).</p>
+  <table style="width:40%">
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>==</td>
+      <td>Equal to (loose)</td>
+      <td><code>5 == "5"</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td>===</td>
+      <td>Equal to (strict, checks type)</td>
+      <td><code>5 === "5"</code></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>Not equal (loose)</td>
+      <td><code>5 != "5"</code></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td>!==</td>
+      <td>Not equal (strict)</td>
+      <td><code>5 !== "5"</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td>></td>
+      <td>Greater than</td>
+      <td><code>8 > 5</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><</td>
+      <td>Less than</td>
+      <td><code>8 < 5</code></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td>>=</td>
+      <td>Greater or equal</td>
+      <td><code>5 >= 5</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><=</td>
+      <td>Less or equal</td>
+      <td><code>5 <= 5</code></td>
+      <td><code>true</code></td>
+    </tr>
+  </table>
+  <h3>4. Logical Operators (combine conditions)</h3>
+  <p>Work with booleans (<code>true</code> / <code>false</code>)</p>
+  <table style="width:40%">
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>&&</td>
+      <td>And</td>
+      <td><code>true %% false<br>(3 < 10 && 1 > 4)</code></td>
+      <td><code>false<br>false</code></td>
+    </tr>
+    <tr>
+      <td>||</td>
+      <td>Or</td>
+      <td><code>true || false<br>(5 === 5 || 6 === 5)</code></td>
+      <td><code>true<br>(true)</code></td>
+    </tr>
+    <tr>
+      <td>!</td>
+      <td>Not</td>
+      <td><code>!true<br>(!(5 === 5))</code></td>
+      <td><code>false<br>false</code></td>
+    </tr>
+  </table>
+  <h3>5. String Operators</h3>
+  <p>Only <code>+</code> and <code>+=</code> work fo strings (concatenation).</p>
+  <pre>
+    <code>
+      let first = "Ceren";
+      let last = "Josh";
+      console.log(first + " " + last); // Ceren Josh
+    </code>
+  </pre>
+  <h3>6. Ternary Operator</h3>
+  <p>Shortland for <code>if...else</code>.</p>
+  <pre>
+    <code>
+      let age = 18;
+      let canVote = (age >= 18) ? "Yes" : "No";
+      console.log(canVote);  // Yes
+    </code>
+  </pre>
+  <h3>7. Type Operators</h3>
+  <table style="width:40%;">
+    <tr>
+      <th>Operator</th>
+      <th>Example</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td><code>typeof</code></td>
+      <td><code>typeof "Hello"</code></td>
+      <td><code>"string"</code></td>
+    </tr>
+    <tr>
+      <td><code>instanceof</code></td>
+      <td><code>x instanceof Array</code></td>
+      <td><code>true</code> if x is an array</td>
+    </tr>
+  </table>
+  <h3>What is Operator Precedence?</h3>
+  <p>If an expression has more than one operator, JavaScript follows precedence rules.</p>
   
+  <h4>Associativity</h4>
+  <p>If two operators have the same precedence, then associativity decides the order.</p>
+  <li><b>Left-to-right</b> → +, -, *, /, %</li>
+  <li><b>Right-to-left</b> → =, **, ternary ?:</li>
+  <p>Example:</p>
+  <pre>
+    <code>
+      console.log(2 ** 3 ** 2); // 512, not 64
+      // Because ** is right-to-left: 3 ** 2 = 9, then 2 ** 9 = 512
+    </code>
+  </pre>
+  <h4>Common Precedence Order (highest → lowest)</h4>
+  <p>Here's a simplified table you can remember:</p>
+  <table style="width:40%;">
+    <tr>
+      <th>Precedence</th>
+      <th>Operator(s)</th>
+      <th>Associativity</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><code>()</code>(parentheses)</td>
+      <td>n/a</td>
+      <td><code>(2 + 3) * 4 = 20</code></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code>++</code>, <code>--</code> (postfix)</td>
+      <td>left-to-right</td>
+      <td><code>x++</code></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code>++</code>, <code>--</code> (prefix), <code>!</code>, <code>typeof</code>, <code>delete</code>, <code>+</code> (unary), <code>-</code> (unary)</td>
+      <td>right-to-left</td>
+      <td><code>-x</code>, <code>!true</code></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code>**</code> (exponent)</td>
+      <td>right-to-left</td>
+      <td><code>2 ** 3 ** 2</code></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code>*, /, %</code></td>
+      <td>left-to-right</td>
+      <td><code>10 / 2 * 3</code></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code>+, -</code></td>
+      <td>left-to-right</td>
+      <td><code>10 - 5 + 2</code></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code><<, >>, >>></code> (bitwise shifts)</td>
+      <td>left-to-right</td>
+      <td><code>4 << 1</code></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code><, <=, >, >=</code></td>
+      <td>left-to-right</td>
+      <td><code>5 > 3</code></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code>==, !=, ===, !==</code></td>
+      <td>left-to-right</td>
+      <td><code>5 === "5"</code></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code>&</code> (bitwise AND)</td>
+      <td>left-to-right</td>
+      <td><code>a & b</code></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code>^</code> (bitwise XOR)</td>
+      <td>left-to-right</td>
+      <td><code>a ^ b</code></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code>|</code> (bitwise OR)</td>
+      <td>left-to-right</td>
+      <td><code>a | b</code></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code>&&</code> (logical AND)</td>
+      <td>left-to-right</td>
+      <td><code>true && false</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code>||</code> (logical OR)</td>
+      <td>left-to-right</td>
+      <td><code>true || false</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code>?:</code> (ternary)</td>
+      <td>right-to-left</td>
+      <td><code>age > 18 ? "Yes" : "No"</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>=, +=, -=, *=, ...</code></td>
+      <td>right-to-left</td>
+      <td><code>x = 5</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>,</code> (comma)</td>
+      <td>left-to-right</td>
+      <td><code>let x = (1, 2, 3); // 3</code></td>
+    </tr>
+  </table>
+  <h4>Parentheses Override Everything</h4>
+  <p>If you're unsure, always use <code>()</code>.</p>
+  <pre>
+    <code>
+      let result = (2 + 3) * 4; // 20
+    </code>
+  </pre>
+
+  <strong>✅ In short:</strong>
+  <ol>
+    <li>Parentheses first.</li>
+    <li>Unary operators (++, --, !, typeof).</li>
+    <li>Multiplication/Division/Modulus.</li>
+    <li>Addition/Subtraction.</li>
+    <li>Comparisons.</li>
+    <li>Logical (&&, ||).</li>
+    <li>Assignment last.</li>
+  </ol>
   
 </body>
 </html>
