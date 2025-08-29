@@ -12,6 +12,8 @@
     border-collapse: collapse;
     
   }
+
+  
 </style>
 <body>
   
@@ -679,6 +681,144 @@
     <li>Logical (&&, ||).</li>
     <li>Assignment last.</li>
   </ol>
+
+  <h1>String Concatenation</h1>
+  <p>String concatenation means joining two or more strings into one string.</p>
+  <h4>1. Using the + Operator</h4>
+  <p>The most traditional way.</p>
+  <pre>
+    <code>
+      let firstName = "Kevin";
+      let lastName = "Swift";
+
+      let fullName = firstName + " " + lastName;
+      console.log(fullName); // Kevin Swift
+    </code>
+  </pre>
+  <h4>2. Using the += Operator</h4>
+  <p>Appends a string to an existing string.</p>
+  <pre>
+    <code>
+      let message = 'Hello';
+      message += 'World!';
+      console.log(message); //Hello World!
+    </code>
+  </pre>
+  <h4>3. Using Template Strings (Recommended)</h4>
+  <p>Cleaner and more modern (ES6+).</p>
+  <pre>
+    <code>
+      let firstName = "Kevin";
+      let lastName = "Swift";
+
+      let fullName = `${firstName} ${lastName}`;
+      console.log(fullName); // Kevin Swift
+    </code>
+  </pre>
+  <h4>4. Concatenating Multiple Strings</h4>
+  <pre>
+    <code>
+      let str1 = "Java";
+      let str2 = "Script";
+      let str3 = " is awesome!";
+
+      let result = str1 + str2 + str3;
+      console.log(result); // JavaScript is awesome!
+    </code>
+  </pre>
+  <h4>5. Concatenating with Numbers</h4>
+  <p>If one side is a string, numbers will be converted to strings automatically.</p>
+  <pre>
+    <code>
+      let score = 100;
+      console.log("Your score is " + score); // "Your score is 100"
+    </code>
+  </pre>
+  <p>Be careful: sometimes this causes unexpected results.</p>
+  <pre>
+    <code>
+      console.log(1 + 2 + "3"); // "33" (not 6)
+      console.log("1" + 2 + 3); // "123"
+    </code>
+  </pre>
+
+  <h1>Template Strings</h1>
+  <h4>What are Template Strings</h4>
+  <p>Template strings are a way to work with strings in JavaScript that are more powerful and flexible than normal strings.<br>They use <b>backticks (`) instead of quotes (' or ").</b></p>
+
+  <h4>Key Features</h4>
+  <h5>1. String Interpolation (insert variables direclty)</h5>
+  <p>Instead of using + for concatenation, you can insert variables with <b>${ }.</b></p>
+  <pre>
+    <code>
+      let name = "Fatma";
+      let age = 18;
+
+      let intro = `My name is ${name} and I am ${age} years old.`;
+      console.log(intro);
+      //My name is Fatma and I am 18 years old.
+    </code>
+  </pre>
+  <h5>2. Multi-line Strings</h5>
+  <p>You can write strings across multiple lines without using <b>\n</b>.</p>
+  <pre>
+    <code>
+      let message = `Hello,
+      This is a Multi-line
+      string in JS.`;
+
+      console.log(message);
+      /*
+      Hello,
+      This is a Multi-line
+      string in JS.
+      */
+    </code>
+  </pre>
+  <h5>3. Expression Embedding</h5>
+  <p>You can put any JavaScript expression inside <b>${}</b>.</p>
+  <pre>
+    <code>
+      let a = 10;
+      let b = 20;
+
+      console.log(`The sum is ${a + b}`);  // The sum is 30
+      console.log(`Next year: ${new Date().getFullYear() + 1}`);
+    </code>
+  </pre>
+  <h5>4. Function Calls </h5>
+  <p>You can even call functions inside <b>${}</b>.</p>
+  <pre>
+    <code>
+      function greet(name) {
+        return `Hello, ${name}!`;
+      }
+
+      console.log(`${greet("Fatma")}`); //Hello, Fatma
+    </code>
+  </pre>
+
+  <h5>5. Tagged Templates (advanced)</h5>
+  <p>Special functions can process template literals.<br>(Useful for libraries like GraphQL, styled-components in React, etc.)</p>
+  <pre>
+    <code>
+      function tag(strings, value) {
+        return strings[0] +  value.toUpperCase();
+      }
+
+      let name = 'Fatma';
+      console.log(tag`Hello ${name}`); // Hello FATMA
+    </code>
+  </pre>
+  <p><b>Quick Summary</b></p>
+  <ul>
+    <li>
+      <b>Normal string:</b><code>"My name is " + name + " and I am " + age + " years old."</code>
+    </li>
+    <li>
+      <b>Template string:</b><code>`My name is ${name} and I am ${age} years old.`</code> ✅ cleaner!
+    </li>
+  </ul>
   
 </body>
 </html>
