@@ -819,6 +819,69 @@
       <b>Template string:</b><code>`My name is ${name} and I am ${age} years old.`</code> ✅ cleaner!
     </li>
   </ul>
-  
+
+  <h1>Type Conversion (Explicit)</h1>
+  <p>You manually convert a value from one type to another. Also called <b>type casting</b>.<br>Examples:</p>
+  <pre>
+    <code>
+      // String → Number
+      let num1 = Number("42");
+      console.log(num1); // 42 (number)
+
+      // Number → String
+      let str1 = String(42);
+      console.log(str1); // "42"
+
+      // Boolean → Number
+      console.log(Number(true));  // 1
+      console.log(Number(false)); // 0
+    </code>
+  </pre>
+  <p>You explicitly use functions like:</p>
+  <ul>
+    <code>
+      <li>Number(value)</li>
+      <li>String(value)</li>
+      <li>Boolean(value)</li>
+      <li>parseInt(value)</li>
+      <li>parseFloat(value)</li>
+    </code>
+  </ul>
+
+  <h1>Type Coercion (Implicit)</h1>
+  <p>JavaScript automatically converts a values's type when needed. This happens behind the scenes.<br>Examples:</p>
+  <pre>
+    <code>
+      console.log("5" + 2); // "52" (number 2 coerced to string)
+      console.log("5" - 2); // 3 (string "5" coerced to number)
+      console.log("5" * "2") // 10 (both coerced to numbers)
+      console.log("Mark" * 3); // NaN (not a number)
+    </code>
+  </pre>
+  <p>Coercion can be tricky because sometimes results are unexpected.</p>
+  <h2>Type Conversion vs Type Coercion</h2>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Type Conversion (Explicit)</th>
+      <th>Type Coercion (Implicit)</th>
+    </tr>
+    <tr>
+      <td>Who decides?</td>
+      <td>The programmer</td>
+      <td>JavaScript engine</td>
+    </tr>
+    <tr>
+      <td>How?</td>
+      <td>By using <code>Number()</code>, <code>String()</code>, etc.</td>
+      <td>By context (+, -, *, ==, etc.)</td>
+    </tr>
+    <tr>
+      <td>Example</td>
+      <td><code>Number("123") → 123</code></td>
+      <td><code>"123" - 0 → 123</code></td>
+    </tr>
+  </table>
+
 </body>
 </html>
