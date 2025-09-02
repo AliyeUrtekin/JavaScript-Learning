@@ -1169,7 +1169,82 @@
       }
     </code>
   </pre>
-  
-  
+  <h1>Expression vs. Statement</h1>
+  <h3>Expression</h3>
+  <p>An expression is a piece of code that produces a value.<br>It can be as simple as a single value (like a number) or as complex as a combination of variables, operators, and functions.<br>Examples:</p>
+  <pre>
+    <code>
+      // Simple expressions (just values):
+      5         // produces 5
+      "Hello"   // produces "Hello"
+      true      // produces true 
+
+      // Arithmetic expressions:
+      2 + 3     // produces 5
+      10 * 1    // produces 10
+      
+      // String expressions:
+      "App" + "le"  // produces "Apple"
+
+      // Variable expressions:
+      let x = 7;
+      x + 3;  // produces 10
+
+      // Function expressions:
+      Math.sqrt(16);   // produces 4
+    </code>
+  </pre>
+  <h3>Statement</h3>
+  <p>A statement is an instruction that tells JavaScript to perform an action.<br>It's like a compelete sentence in a programming language.<br>Examples of statements:</p>
+  <pre>
+    <code>
+      let x = 5;     // variable declaration statement
+      if (x > 0) {   // if statement
+        console.log("Positive number");  // expression statement inside
+      }
+
+      // Declaration statements - define variables or functions
+      let name = "Delta";
+      function greet() { console.log("Hello"); }
+
+      // Control flow statements - control execution
+      if (age > 18) { ... }
+      else { ... }
+      switch (day) { ... }
+
+      // Looping statements - repeat actions
+      for (let i = 0; i < 5; i++) { ... }
+      while (x < 10) { ... }
+
+      // Expression statements - expressions used as standalone instructions
+      x + 5;              // valid but useless statement
+      console.log(x);     // function call as a statement
+    </code>
+  </pre>  
+  <p><b>Characteristics of Statements</b></p>
+  <ul>
+    <li>They do something but don't always return a value.</li>
+    <li>End with a semicolon (;) (except block statements).</li>
+    <li>They can contain expressions inside them.</li>
+  </ul>
+  <p><b>Key difference</b></p>
+  <ul>
+    <li>Expression → produces a value.</li>
+    <li>Statement → performs an action.</li>
+  </ul>
+  <p>Example mixing both:</p>
+  <pre><code>
+    let age = 23;               // statement
+    let isAdult = age >= 18;    // expression inside a statement
+  </code></pre>
+  <ul>
+    <li><code>age >= 18</code> is an expression → produces <code>true</code></li>
+    <li><code>let isAdult = age >= 18;</code> is a statement → assigns that value to <code>isAdult</code>.</li>
+  </ul>
+  <p><b>Quick Tip to Remember</b></p>
+  <ul>
+    <li>If you can print it or use it in another expression, it's an expression.</li>
+    <li>If it's an instruction to do something, it's a statement.</li>
+  </ul>
 </body>
 </html>
