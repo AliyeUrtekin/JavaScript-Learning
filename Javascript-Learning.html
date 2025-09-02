@@ -883,5 +883,184 @@
     </tr>
   </table>
 
+  <h1>If Statement in JavaScript</h1>
+  <p>The <code>if</code> statement is a conditional statement.<br>It allows your program to make decisions:<br>👉 "If a condition is true, do something. Otherwise, skip it."</p>
+
+  <p><b>Syntax:</b></p>
+  <pre>
+    <code>
+      if (condition) {
+        // code to run if condition is true
+      }
+    </code>
+  </pre>
+  <ul>
+    <li><code>condition</code> → must be a boolean (<code>true</code> or <code>false</code>).</li>
+    <li>If <code>condition</code> is <code>true</code> → the code inside <code>{ }</code> runs.</li>
+    <li>If <code>condition</code> is <code>false</code> → the code inside <code>{ }</code> is skipped.</li> 
+  </ul>
+  <p>Example 1</p>
+  <pre>
+    <code>
+      let age = 20;
+
+      if (age >= 18) {
+        console.log("You are an adult.");
+      }
+    </code>
+  </pre>
+  <p>Example 1</p>
+  <pre>
+    <code>
+      let age = 20;
+
+      if (age >= 18) {
+        console.log("You are an adult.");
+      }
+    </code>
+  </pre>
+  <p>✔ Output: <code>You're an adult.</code> (because <code>20 >= 18</code> is <code>true</code>)</p>
+  <p>Example 2</p>
+  <pre>
+    <code>
+      let age = 15;
+
+      if (age >= 18) {
+        console.log("You are an adult.");
+      }
+    </code>
+  </pre>
+  <p>✔ Output: (nothing) because <code>15 >= 18</code> is false.</p>
+  <h3>With <code>else</code></h3>
+  <p>You can add <code>else</code> for when the condition is <code>false</code>:</p>
+  <pre>
+    <code>
+      let age = 15;
+
+      if (age >= 18) {
+        console.log("You are an adult.");
+      } else {
+        console.log("You are under 18.");
+      }
+    </code>
+  </pre>
+  <p>✔ Output: <code>You are under 18.</code></p>
+  <h3>With <code>else if</code> (multiple conditions)</h3>
+  <pre>
+    <code>
+      let score = 75;
+
+      if (score >= 90) {
+        console.log("Grade: A")
+      } else if (score >= 70) {
+        console.log("Grade: B");
+      } else {
+        console.log("Grade: C or lower");
+      }
+    </code>
+  </pre> 
+  <p>✔ Output: <code>Grade: B</code></p>
+  <p>👉 In short:</p>
+  <ul>
+    <li><code>if</code> → checks condition.</li>
+    <li><code>else</code> → runs if condition is false.</li>
+    <li><code>else if</code> → lets you check multiple conditions.</li>
+  </ul>
+
+  <h1>Truthy and Falsy Values</h1>
+  <p>When JavaScript expects a boolean (<code>true</code> or <code>false</code>) but gets a non-boolean value, it automatically converts the value to either truthy or falsy.<br>This usually happens in conditions like <code>if</code>, loops, or logical operators.</p>
+  <h3>Falsy Values</h3>
+  <p>In JavaScript, only 6 values are considered falsy:</p>
+  <ol>
+    <li><code>false</code></li>
+    <li><code> (zero)</code></li>
+    <li><code>""</code> (empty string)</li>
+    <li><code>null</code></li>
+    <li><code>undefined</code></li>
+    <li><code>NaN</code> (Not-a-number)</li>
+  </ol>
+
+  <h3>Truthy Values</h3>
+  <p>Everything other than falsy values is truthy.<br>Examples:</p>
+  <ul>
+    <li><code>true</code></li>
+    <li>Any non-zero number (<code>1, -5, 3.14</code>)</li>
+    <li>Any non-empty string (<code>"hello", "0", "false"</code>)</li>
+    <li>Objects(<code>{}, [], function() {}</code>)</li>
+  </ul>
+  <p>Example in Code</p>
+  <pre>
+    <code>
+      if ("hello") {
+        console.log("This is truthy!"); 
+      }
+      // Output: This is truthy!
+
+      if (0) {
+        console.log("This is truthy!");
+      } else {
+        console.log("This is falsy!");
+      }
+      // Output: This is falsy!
+    </code>
+  </pre>
+  <pre>
+    <code>
+      console.log(Boolean(""));   // false
+      console.log(Boolean("hi")); // true
+      console.log(Boolean(0));    // false
+      console.log(Boolean(42));   // true
+    </code>
+  </pre>
+
+  <h1>Equality Operators</h1>
+  <h3>1. Loose Equality (<code>==</code>)</h3>
+  <ul>
+    <li>Compares two values after converting (coercing) them to the same type.</li>
+    <li>It does not check data type strictly.</li>
+  </ul>
+  <pre>
+    <code>
+      5 == "5";   //true (string "5" is converted to number)
+      0 == false; //true (false is converted to 0)
+      null == undefined; //true
+    </code>
+  </pre>
+  <h3>2. Strictly Equality (===)</h3>
+  <ul>
+    <li>Compares two values without type conversion.</li>
+    <li>Both value and type must be the same.</li>
+  </ul>
+  <p>Example:</p>
+  <pre>
+    <code>
+      5 === "5";  //false (different types: number vs string)
+      0 === false //false (number vs boolean)
+      5 === 5 //true (same type and value)
+    </code>
+  </pre>
+  <h3>3. Inequality Operators</h3>
+  <ul>
+    <li><code>!=</code> → Loose inequality (does type conversion).</li>
+    <li><code>!==</code> → Strict inequality (no type conversion)</li>
+  </ul>
+  <p>Example:</p>
+  <pre>
+    <code>
+      5 != "5";  //false (after coercion, 5 == 5)
+      5 !== "5"  //true (different types)
+    </code>
+  </pre>
+
+  <p><b>⚡ Quick Summary</b></p>
+  <ul>
+    <li><code>==</code> → equality with type coercion</li>
+    <li><code>===</code> → equality without type coercion (recommended)</li>
+    <li><code>!=</code> → inequality with type coercion</li>
+    <li><code>!==</code> → inequality without type coercion</li>
+  </ul>
+  <p>Best practice: Always use === and !== to avoid unexpected results.</p>
+  
+  
 </body>
 </html>
