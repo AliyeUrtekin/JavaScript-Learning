@@ -1061,6 +1061,60 @@
   </ul>
   <p>Best practice: Always use === and !== to avoid unexpected results.</p>
   
+  <h1>Boolean Logic and Logical Operators</h1>
+  <p>Boolean logic is a way of reasoning with true and false values using logical operators.<br>It's widely used in programming for decision-making (like in <code>if</code> statements).</p>
+  <p>Logical operators are used to combine or manipulate boolean values (<code>true</code> or <code>false</code>) and return a boolean result.</p>
+  <p>The three main boolean operators:</p>
+  <h3>1. AND (&&)</h3>
+  <p>Returns <code>true</code> if both conditions are true</p>
+  <pre><code>
+    console.log(true && true);  //true
+    console.log(true && false); //false
+    console.log(false && false); //false
+  </code></pre>
+  <p>Example:</p>
+  <pre>
+    <code>
+      let age = 20;
+      if (age >= 18 && age < 30) {
+        console.log("You are a young adult.")
+      }
+      // Both conditions must be true
+    </code>
+  </pre>
+  <h3>OR (||)</h3>
+  <p>Returns <code>true</code> if at least one condition is true.</p>
+  <pre>
+    <code>
+      console.log(true || false);  //true
+      console.log(false || false);  //true
+    </code>
+  </pre>
+  <p>Example:</p>
+  <pre>
+    <code>
+      let day = "Saturday";
+      if (day === "Saturday" || day === "Sunday") {
+        console.log("It's the weekend!");
+      }
+      // Only one condition needs to be true
+    </code>
+  </pre>
+  <h3>NOT (!)</h3>
+  <p>Reverses a value: true → false, false → true.</p>
+  <pre><code>
+    console.log(!true);  //false
+    console.log(!false);  //true
+  </code></pre>
+  <p>Example:</p>
+  <pre>
+    <code>
+      let isLoggedIn = false;
+      if (!isLoggedIn) {
+        console.log("Please log in.");
+      }
+    </code>
+  </pre>
   
 </body>
 </html>
