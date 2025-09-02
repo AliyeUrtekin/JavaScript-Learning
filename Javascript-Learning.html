@@ -1115,6 +1115,61 @@
       }
     </code>
   </pre>
+  <h1><code>switch</code> Statement</h1>
+  <p>A switch statement is used when you want to compare one value against many possible cases.<br>Instead of writing a long chain of <code>if ... else if ... else</code>, you can use <code>switch</code> for cleaer code.</p>
+  <p>Syntax</p>
+  <pre>
+    <code>
+      switch (expression) {
+        case value1:
+          // code block if expression === value1
+          break;
+        case valeu2:
+          // code block if expression === valeu2
+          break;
+        default:
+          // code block if no case matches
+      }
+    </code>
+  </pre>
+  <p>How it works</p>
+  <ol>
+    <li>JavaScript evaluates the expressions.</li>
+    <li>It checks each case one by one.</li>
+    <li>If it finds a match (=== strict equality), it runs that block.</li>
+    <li>The <code>break</code> keyword stops execution, so the program doesn't continue to the next case.</li>
+    <li>If no match is found, the <code>default</code> block runs.</li>
+  </ol>
+  <p>Example:</p>
+  <pre>
+    <code>
+      const day = 'friday';
+
+      switch (day) {
+        case 'monday': // day === 'monday'
+          console.log('Plan course structure');
+          console.log('Go to coding meetup');
+          break;
+        case 'tuesday':
+          console.log('Prepare theory videos');
+          break;
+        case 'wednesday':
+        case 'thursday':
+          console.log('Write code examples');
+          break;
+        case 'friday':
+          console.log('Record videos');
+          break;
+        case 'saturday':
+        case 'sunday':
+          console.log('Enjoy the weekend :D');
+          break;
+        default:
+          console.log('Not a valid day!');
+      }
+    </code>
+  </pre>
+  
   
 </body>
 </html>
