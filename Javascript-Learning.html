@@ -1246,5 +1246,59 @@
     <li>If you can print it or use it in another expression, it's an expression.</li>
     <li>If it's an instruction to do something, it's a statement.</li>
   </ul>
+  <h1>The Conditional (Ternary) Operator (? :) in JavaScript</h1>
+  <p>The ternary operator is a shorthand way of writing an if...else statement in a single line.<br>It is called "ternary" because it takes three operands:<br>Syntax:</p>
+  <code>condition ? expressionIfTrue : expressionIfFalse</code>
+  <ul>
+    <li>condition → A boolean expression that is evaluated (true or false).</li>
+    <li>expressionIfTrue → Runs if the condition is true.</li>
+    <li>expressionIfFalse → Runs if the condition is false.</li>
+  </ul>
+  <p>Example 1: Basic</p>
+  <pre>
+    <code>
+      let age 18;
+      let canVote = age >= 18 ? "Yes, you can vote" : "No, you cannot vote";
+      
+      console.log(canVote);
+      // Output: Yes, you can vote
+    </code>
+  </pre>
+  <p>Equivalent if...else:</p>
+  <pre>
+    <code>
+      let age = 18;
+      let canVote;
+
+      if (age >= 18) {
+        canVote = "Yes, you can vote";
+      } else {
+        canVote = "No, you cannot vote";
+      }
+    </code>
+  </pre>
+  <p>Example 2: Nested Ternary (not always recommended, can get confusing)</p>
+  <pre>
+    <code>
+      let score = 85;
+
+      let grade = score >= 90 ? "A" :
+                  score >= 70 ? "B" :
+                  score >= 60 ? "C" : "F";
+      
+      console.log(grade);
+      // Output: B
+    </code>
+  </pre>
+  <p>Example 3: Using in console.log directly</p>
+  <pre>
+    <code>
+      let isMember = false;
+
+      console.log(isMember ? "Welcome back, member!" : "Please sign up.");
+      // Output: Please sign up.
+    </code>
+  </pre>
+
 </body>
 </html>
