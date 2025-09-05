@@ -1299,6 +1299,310 @@
       // Output: Please sign up.
     </code>
   </pre>
+  <h1>Strict Mode</h1>
+  <p>Strict mode is a special mode in JavaSript that makes the language more strict and secure.<br>It helps you write cleaner, less error-prone code by catching mistakes that are normally ignored.</p>
+  <h4>How to Enable Strict Mode?</h4>
+  <p>Add this line at the top of your script or function:</p>
+  <pre><code>
+    "use strict";
+  </code></pre>
+  <p>Example (global strict mode):</p>
+  <pre><code>
+    "use strict";
+
+    x = 10;    // Error: x is not declared
+  </code></pre>
+  <p>Example (strict mode only in a function):</p>
+  <pre><code>
+    function myFunction() {
+      "use strict";
+      y = 5;     // Error inside this function
+    }
+  </code></pre>
+  <h4>What Strict Mode Does</h4>
+  <p>1. Prevents using undeclared variables</p>
+  <pre><code>
+    "use strict";
+    x = 3.14;   // ReferenceError
+  </code></pre>
+  <p>2. Disallows deleting variables or functions</p>
+  <pre><code>
+    "use strict";
+    let a = 5;
+    delete a;  // SyntaxError
+  </code></pre>
+  <p>3. Catches dulicate parameter names</p>
+  <pre><code>
+    "use strict";
+    function sum(a, a)  {  // SyntaxError
+      return a + a;
+    }
+  </code></pre>
+  <p>4. Make <code>this</code> safer</p>
+  <ul>
+    <li>In normal mode: <code>this</code> inside a function defaults to the global object (<code>window</code> in browsers).</li>
+    <li>In strict mode: <code>this</code> becomes <code>undefined</code> if not explicitly set.</li>
+  </ul>
+  <pre><code>
+    "use strict";
+    function test() {
+      console.log(this);  // undefined
+    }
+    test();
+  </code></pre>
+  <p>5. Reserved keywords are protected</p>
+  <pre><code>
+    "use strict";
+    let public = 123;   // SyntaxError (future reserved keyword)
+  </code></pre>
+
+  <h1>Functions</h1>
+  <p>A function is a block of code designed to perform a specific task.<br>You can define it once and then reuse it many times.</p>
+  <p>The simplest form of a function is a <b>function declaration:</b></p>
+  <pre><code>
+    function logger() {
+      console.log('My name is Aliye!');
+    }
+
+    // Calling/running/invoking the function
+    logger();
+    logger();
+  </code></pre>
+  <p>Functions can receive input data (parameters) and return output data:</p>
+  <pre><code>
+    function fruitProcessor(apples, oranges) {
+      console.log(apples, oranges);
+      const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+      return juice;
+    }
+    
+    // Using the function with arguments 5 and 0
+    const appleJuice = fruitProcessor(5, 0);
+    console.log(appleJuice);
+    
+    // Reusing the function with different inputs
+    const appleOrangeJuice = fruitProcessor(2, 4);
+    console.log(appleOrangeJuice);
+  </code></pre>
+  <p>In this example:</p>
+  <ul>
+    <li>apples and oranges are parameters (placeholders)</li>
+    <li>5, 0, 2, and 4 are arguments (actual values)</li>
+    <li>The function processes these inputs and returns a string</li>
+  </ul>
+  <p>Functions help us write DRY code (Don't Repeat Yourself), which is an important clean code principle.</p>
+  <h2>Function Declarations</h2>
+  <p>A function declaration is the standard way to define a function in JavaScript.<br>It uses the <code>function</code> keyword, followed by a name, optional parameters, and a body.</p>
+  <pre><code>
+    // Function Declaration:
+
+    function calcAge1(birthYear) {
+      return 2025 - birthYear;
+    }
+
+    const age1 = calcAge1(1990);
+  </code></pre>
+  <h4>Key Features of Function Declarations</h4>
+  <h5>1. Named Functions</h5>
+  <ul><li>Every function declaration must have a name.</li></ul>
+  <pre><code>
+    function add(a, b) {
+      return a + b;
+    }
+  </code></pre>
+  <h5>2. Hoisting</h5>
+  <ul>
+    <li>Function declarations are hoisted to the top of their scope.</li>
+    <li>This means you can call them before they are defined in the code.</li>
+  </ul>
+  <pre><code>
+    sayHi();   // Works, output: Hi!
+
+    function sayHi() {
+      console.log("Hi!");
+    }
+  </code></pre>
+  <h5>3. Reusable</h5>
+  <ul><li>You can call the same function as many times as you want with different arguments.</li></ul>
+  <pre><code>
+    function square(n) {
+      return n * n;
+    }
+
+    console.log(square(4));  // 16
+    console.log(square(7));  // 49
+  </code></pre>
+  <h4>When to Use</h4>
+  <ul>
+    <li>Use function declarations when you want your function to be available everywhere in its scope, even before it's written in the code.</li>
+    <li>They're good for main tasks in your program that you'll call often.</li>
+  </ul>
+  <p><b>Summary:</b> A function declaration defines a named function using the <code>function</code> keyword. It is hoisted, reusable, and can be called anywhere in its scope.</p>
+  <h2>Function Expression:</h2>
+  <p>A function expression means creating a function and assigning it to a variable.<br>Unlike function declarations, it is not hoisted, so you must define it before using it.</p>
+  <pre><code>
+    // Function Expression:
+
+    const calcAge2 = function (birthYear) {
+      return 2025 -birthYear;
+    }
+
+    const age2 = calcAge2(1990);
+    console.log(age1, age2);   // Both produce the same result
+  </code></pre>
+  <h4>Key Features of function Expressions</h4>
+  <h5>1. Anonymous or Named</h5>
+  <ul><li>Anonymous function (most common):</li></ul>
+  <pre><code>
+    const add = function(a, b) {
+      return a + b;
+    }
+  </code></pre>
+  <ul><li>Named function expression (rare but useful for debugging):</li></ul>
+  <h5>2. Not Hoisted</h5>
+  <ul><li>You cannot call a function expression before it's defined.</li></ul>
+  <pre><code>
+    sayHi();  // Error: cannot access 'sayHi' before initialization
+
+    const sayHi = function() {
+      console.log("Hi!");
+    }
+  </code></pre>
+  <h5>3. Stored in Variables</h5>
+  <ul><li>Since the function is stored in a variable, you can pass it around like data.</li></ul>
+  <pre><code>
+    const square = function(n) {
+      return n * n;
+    }
+
+    const numbers = [2, 4, 6];
+    const results = numbers.map(square);   // [4, 16, 36]
+  </code></pre>
+  <h4>When to Use</h4>
+  <ul>
+    <li>When you need a function only after it's defined.</li>
+    <li>When you want to assign functions to variables, objects, or pass them as arguments (very common in callbacks and functional programming).</li>
+  </ul>
+  <p><b>Summary:</b> A function expression creates a function and assigns it to a variable. Unlike declarations, it is not hoisted. It can be anonymous or named, and is commonly used for callbacks and passing functions around.</p>
+
+  <p><b>Function Declaration vs. Expressions:</b> The main difference between them is that function declarations can be called before they're defined in the code (due to a process called hoisting), while function expressions cannot:</p>
+  <pre><code>
+    // This works
+    const age1 = calcAge1(1991);
+    
+    function calcAge1(birthYear) {
+      return 2037 - birthYear;
+    }
+    
+    // This would cause an error if placed before the function expression
+    const age2 = calcAge2(1991);
+    
+    const calcAge2 = function (birthYear) {
+      return 2037 - birthYear;
+    };
+  </code></pre>
+  <p>Both have their place in JavaScript, and which one you use often comes down to personal preference.</p>
+  <h1>Arrow Function</h1>
+  <p>An arrow function is a shorter way to write function expressions, especially useful for simple one-line functions, introduced in ES6(2015).<br>It uses the <code>=></code> (arrow) syntax.</p>
+  <pre><code>
+    // Arrow function with one parameter and implicit return
+    const calcAge3 = birthYear => 2025 - birthYear;
+    const age3 = calcAge3(1990);
+    console.log(age3);
+
+    // Arrow function with multiple parameters and multiple lines of code
+    const yearsUntilRetirement = (birthYear, firstName) => {
+      const age = 2025 - birthYear;
+      const retirement = 65 - age;
+      return `${firstName} retires in ${retirement} years!`;
+    }
+    console.log(yearsUntilRetirement(1990, 'Jone'));
+  </code></pre>
+  <p><b>Key points about arrow functions:</b></p>
+  <ol>
+    <li>For one parameter and one-line body, you can omit parantheses around parameters and curly braces</li>
+    <li>With a one-liner without curly braces, the return is implicit</li>
+    <li>For multiple parameters, you need parantheses: (param1, param2) => expression</li>
+    <li>For multiple lines of code, you need curly braces and an explicit return statement</li>
+    <li>Arrow functions don't have their own <b>this</b> keyword (important for more advanced JavaScript)</li>
+  </ol>
+  <p><b>No <code>this</code> binding</b></p>
+  <ul>
+    <li>Arrow functions do not create their own <code>this</code>.</li>
+    <li>They use the <code>this</code> value from their surrounding scope.</li>
+  </ul>
+  <pre><code>
+    const person = {
+      name: "Aliye",
+      greet: function() {
+        const inner = () => {
+          console.log("Hi, I'm " + this.name);
+        }
+        inner();
+      }
+    }
+    person.greet();  // Hi, I'm Aliye
+  </code></pre>
+  <p>With a normal function inside, <code>this</code> would be <code>undefined</code> or the global object.</p>
+  <h4>When to Use</h4>
+  <ul>
+    <li>Great for small, quick functions.</li>
+    <li>Perfect for callbacks (e.g., <code>.map(), .filter(), .forEach()</code>).</li>
+    <li>Useful when you want to preserve the <code>this</code> value from the surrounding scope.</li>
+  </ul>
+  <p><b>Summary:</b> Arrow functions are a shorter syntax for function expressions, with differences in <code>this</code> handling, no <code>arguments</code> object, and not usable as constructors.</p>
+  <h2>Functions Calling Other Functions</h2>
+  <p>In JavaScript, it's common for one function to call another function. This allows us to break down complex problems into smaller, reusable parts.</p>
+  <pre><code>
+    // Function to cut fruit into pieces
+    const cutPieces = function (fruit) {
+      return fruit * 4;
+    };
+    
+    // Function that uses the cutPieces function
+    const fruitProcessor = function (apples, oranges) {
+      const applePieces = cutPieces(apples);
+      const orangePieces = cutPieces(oranges);
+    
+      const juice = `Juice with ${applePieces} pieces of apple and
+    ${orangePieces} pieces of orange.`;
+      return juice;
+    };
+
+    console.log(fruitProcessor(2, 3));
+  </code></pre>
+  <p>In this example, the fruitProcessor function calls the cutPieces function twice. This approach follows the DRY principle - if we later need to change how fruits are cut (e.g., cut into 3 pieces instead of 4), we only need to change it in one place.</p>
+
+  <h2>Reviewing Functions</h2>
+  <pre><code>
+    const calcAge = function (birthYear) {
+      return 2037 - birthYear;
+    };
+    
+    const yearsUntilRetirement = function (birthYear, firstName) {
+      const age = calcAge(birthYear);
+      const retirement = 65 - age;
+      
+      if (retirement >= 0) {
+        return `${firstName} retires in ${retirement} years!`;
+      } else {
+      return `${firstName} is already retired 🎉 `;
+      }
+    };
+
+    console.log(yearsUntilRetirement(1991, 'Jonas'));
+    console.log(yearsUntilRetirement(1969, 'Mark'));
+  </code></pre>
+  <p>Important points about functions:</p>
+  <ol>
+    <li> Functions can call other functions (like calcAge inside yearsUntilRetirement)</li>
+    <li> Parameters are like local variables that only exist inside the function</li>
+    <li>Functions with the same parameter names don't interfere with each other</li>
+    <li>The return statement immediately exits the function - any code after it won't run</li>
+    <li> Functions can return different values based on conditions (like our retirement example)</li>
+    <li> Functions can be stored as values and accessed through the console</li>
+  </ol>
+  <p>Functions are fundamental in JavaScript and understanding them well is critical for becoming proficient.</p>
 
 </body>
 </html>
