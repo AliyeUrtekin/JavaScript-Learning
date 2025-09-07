@@ -1604,5 +1604,81 @@
   </ol>
   <p>Functions are fundamental in JavaScript and understanding them well is critical for becoming proficient.</p>
 
+  <h1>Arrays</h1>
+  <p>An array is a special type of object in JavaScript used to store multiple values in a single variable.</p>
+  <ul>
+    <li>Each values has an index (position number).</li>
+    <li>Indexes start at 0.</li>
+  </ul>
+  <p><b>Syntax</b></p>
+  <pre><code>
+    // Using array literal (common way)
+    const fruits = ["Apple", "Banana", "Orange"];
+
+    // Using new Array() (less common)
+    const numbers = new Array(1, 2, 3, 4, 5);
+  </code></pre>
+  <p>Example</p>
+  <pre><code>
+    const friends = ["Michael", "Steven", "Peter"];
+
+    console.log(friends[0]);  // Michael
+    console.log(friends[2]);  // Peter
+    console.log(friends.length);  // 3
+    console.log(friends[friends.length - 1]);  // Peter (Last element)
+  </code></pre>
+  <h3>Array Features</h3>
+  <p>Can store different data types:</p>
+  <pre><code>
+    const mixed = ["Sarah", "37", true, { job: "developer" }];
+  </code></pre>
+  <p><b>Mutable</b> → You can change values:</p>
+  <pre><code>
+    const colors = ["Red", "Blue", "Green"];
+    colors[1] = "Yellow";
+    console.log(colors);  // ["Red", "Yellow", "Green"]
+  </code></pre>
+  <h3>Common Array Methods</h3>
+  <h4>1. Add & Remove</h4>
+  <pre><code>
+    const friends = ["Sarah", "Steven", "Peter"];
+
+    friends.push("Joy");   // Add to End
+    friends.unshift("John")  // Add to start
+    console.log(friends)   // ["John", "Sarah", "Steven", "Peter", "Joy"]
+
+    friends.pop();  // Remove last
+    friends.shift();  // Remove first
+    console.log(friends);   // ["Sarah", "Steven", "Peter"]
+  </code></pre>
+  <h4>2. Search</h4>
+  <pre><code>
+    console.log(friends.indexOf("Steven"));  // 1
+    console.log(friends.includes("Peter"));  // true
+    console.log(includes("Bob"));  // false
+  </code></pre>
+  <h4>3. Loop through array</h4>
+  <pre><code>
+    for (let i = 0; i < friends.length; i++) {
+      console.log(friends[i]);
+    }
+  </code></pre>
+  <h4>4. Modern Methods</h4>
+  <pre><code>
+    const numbers = [1, 2, 3, 4, 5];
+
+    console.log(numbers.map(n => n * 2));    // [2, 4, 6, 8, 10]
+    console.log(numbers.filter(n => n > 2));  // [3, 4, 5]
+    console.log(numbers.reduce((a, b) => a + b, 0));  // 15
+  </code></pre>
+  <h3>Why Arrays?</h3>
+  <ul>
+    <li>Store multiple related values together.</li>
+    <li>Easy to access and manipulate data.</li>
+    <li>Useful for loops, collections, and data processing.</li>
+  </ul>
+  <p><b>Summary:</b> An array is a collection of values stored under one variable, accessed by index (starting at 0). Arrays are mutable and come with powerful built-in methods like <code>push()</code>, <code>pop()</code>, <code>map()</code>, and <code>filter()</code>.</p>
+
+
 </body>
 </html>
