@@ -1678,6 +1678,94 @@
     <li>Useful for loops, collections, and data processing.</li>
   </ul>
   <p><b>Summary:</b> An array is a collection of values stored under one variable, accessed by index (starting at 0). Arrays are mutable and come with powerful built-in methods like <code>push()</code>, <code>pop()</code>, <code>map()</code>, and <code>filter()</code>.</p>
+  <h1>Objects</h1>
+  <p>An object is a collection of key-value pairs.</p>
+  <ul>
+    <li>Keys are called properties (or methods if they store functions).</li>
+    <li>Values can be anything: string, numbers, arrays, other objects, or functions.</li>
+  </ul>
+  <p>Objects are used represent real-world entities.</p>
+  <p>Syntax</p>
+  <pre><code>
+    const objectName = {
+      key1: value1,
+      key2: value2,
+      key3: value3
+    };
+  </code></pre>
+  <p>Example:</p>
+  <pre><code>
+    const person = {
+      firstName: 'Aliye',
+      lastName: 'Urtekin',
+      age: 29,
+      friends: ['Michael', 'Sarah', 'Orro'],
+      job: 'Developer',
+      isMarried: false,
+      greet: function() {
+        return "Hello, my name is " + this.firstName;
+      }
+    };
+
+    console.log(person.firstName);  // Aliye
+    console.log(person["lastName"]);  // Urtekin
+    console.log(person.greet());  // Hello, my name is Aliye
+  </code></pre>
+  <h2>Accessing Properties</h2>
+  <h3>1. Dot Notation</h3>
+  <pre><code>
+    console.log(person.age);  // 29
+  </code></pre>
+  <h3>2. Bracket Notation</h3>
+  <pre><code>
+    console.log(person["job"]);  // Developer  
+  </code></pre>
+  <p>Use bracket notation if the key is stored in a variable:</p>
+  <pre><code>
+    const key = "friends";
+    console.log(person[key]);   // ['Michael', 'Sarah', 'Orro']
+  </code></pre>
+  <h2>Modifying Obejcts</h2>
+  <pre><code>
+    person.age = 25;    // update
+    person.city = 'Yalova';  // add new property
+    delete person.isMarried;  // delete property
+
+    console.log(person);
+  </code></pre>
+  <h2>Methods (Functions inside objects)</h2>
+  <pre><code>
+    const car = {
+      brand: 'Toyota',
+      model: 'Corolla',
+      start: function() {
+        return this.brand + " is starting...";
+      }
+    };
+
+    console.log(car.start());  // Toyota is starting...
+  </code></pre>
+  <h2>Nested Obejcts</h2>
+  <pre><code>
+    const student = {
+      name: 'John',
+      grades: {
+        math: 90,
+        science: 85
+      }
+    };
+
+    console.log(student.grades.math);  // 90  
+  </code></pre>
+  <h3>Why Use Objects?</h3>
+  <ul>
+    <li>Store related data together (person, car, product, etc.).</li>
+    <li>Represent real-world entities.</li>
+    <li>Useful for structured and organized code.</li>
+  </ul>
+  <p><b>Summary:</b> An object is a collection of key-value pairs. You can access values with dot or bracket notation, update or delete properties. and add methods for behavior.</p>
+
+  
 
 
 </body>
