@@ -1765,7 +1765,108 @@
   </ul>
   <p><b>Summary:</b> An object is a collection of key-value pairs. You can access values with dot or bracket notation, update or delete properties. and add methods for behavior.</p>
 
-  
+  <h1>Loops</h1>
+  <p>A loop allows you to run a block of code repeatedly as long as a condition is true.<br>Instead of writing the same code multiple times, you use a loop to auomate repetition.</p>
+  <h2>for Loop</h2>
+  <p>The for loop is used when you want to run a block of code a specific number of times.<br>It has parts: initialization, condition, and update.</p>
+  <pre><code>
+    // Syntax
+
+    for (initialization; condition; increment/decrement) {
+      // code block
+    }
+  </code></pre>
+  <ul>
+    <li><b>initialization →</b> runs once before the loop starts (e.g., <code>let i = 0;</code>)</li>
+    <li><b>condition →</b> checked before every iteration, loop runs if true</li>
+    <li><b>icrement/decrement →</b> updates the loop counter (e.g., <code>i++</code>)</li>
+  </ul>
+  <p><b>Example: </b>Looping through an array</p>
+  <pre><code>
+    const fruits = ["Apple", "Banana", "Orange"];
+
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i0]);
+    }
+    // Output: Apple, Banana, Orange
+  </code></pre>
+  <p><b>Summary</b></p>
+  <ul>
+    <li>A for loop repeats code for a known number of times.</li>
+    <li>It has 3 parts: init → condition → update.</li>
+    <li>Can be used for counting, iterating arrays, and more.</li>
+    <li>Supports break (exit early) and continue (skip iteration).</li>
+  </ul>
+  <h2>while Loop</h2>
+  <p>A while loop is a control flow statement that repeats a block of code as long as a given condition is true.</p>
+  <pre><code>
+    // Syntax
+
+    while (condition) {
+      // code to execute repeatedly
+    }
+  </code></pre>
+  <ul>
+    <li><b>condition →</b> evaluated before each loop iteration.</li>
+    <li>If the condition is true, the loop runs.</li>
+    <li>If the condition is false, the loop stops.</li>
+  </ul>
+  <p><b>Example: </b>Guessing game</p>
+  <pre><code>
+    let secret = 7;
+    let guess = 3;
+
+    while (guess !== secret) {
+      console.log("Wrong guess, try again!");
+      guess++   // simulate trying again
+    }
+
+    console.log("Correcct! The secret number is " + guess);
+  </code></pre>
+  <h3>Infinite loop (Be careful!)</h3>
+  <p>If the condition never becomes false, the loop will run forever.</p>
+  <pre><code>
+    while (true) {
+      //  This will run endlessly unless a break is used
+      console.log("Looping forever!");
+      break;  // stop the loop manually
+    }
+  </code></pre>
+  <p><b>Key Points</b></p>
+  <ul>
+    <li>Use while when you don't know beforehand how many times you need to loop.</li>
+    <li>Always make sure the condition eventually becomes false, otherwise you get an infinite loop.</li>
+  </ul>
+  <h3>Loop Control Keywords</h3>
+  <h4>break</h4>
+  <p>Exits the loop immediately, even if the condition is still true.<br>Useful when you've found what you're looking for and don't need to continue looping.</p>
+  <pre><code>
+    for (let i = 1; i <= 10; i++) {
+      if (i === 5) {
+        break;  // stop loop when i is 5
+      }
+    }
+
+    // Output: 1 2 3 4
+  </code></pre>
+  <h4>continue</h4>
+  <p>Skips the current iteration and jumps to the next loop cycle.<br>Useful when you want to ignore certain vslues but keep looping.</p>
+  <pre><code>
+    for (let = 1; i <= 5; i++) {
+      if (i === 3) {
+        continue;  // skip printing 3
+      }
+      console.log(i);
+    }
+    // Output: 1 2 4 5
+  </code></pre>
+  <p>Key differences between for and while loops:</p>
+  <ul>
+    <li>Use for when you know the exact number of iterations</li>
+    <li>Use while when you don't know how many iterations will be needed</li>
+    <li>The while loop is more flexible but requires manual setup of the counter (if needed)</li>
+  </ul>
+
 
 
 </body>
